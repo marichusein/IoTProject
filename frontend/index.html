@@ -23,11 +23,11 @@
         <div id="donji">
             <div id="donjiDesni">
                 <h1 id="svjetloS">Prozor</h1>
-                <input type="range" id="prozor" min="0" max="180"></input>
+                <input type="range" id="prozor" min="0" max="180" onchange="NagibProzora()"></input>
                 <button id="prozorZakljucaj" onclick="Zakljucaj()">Zakljucaj</button>
             </div>
             <div id="donjiLijevi">
-                <button>Nismo kod kuće</button>
+                <button id="dugmeSenzor">Nismo kod kuće</button>
                 <h1 id="pokret"></h1>
             </div>
         </div>
