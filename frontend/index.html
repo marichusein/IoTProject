@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="sve">
+        <div id="gornji">
+            <div id="navbar">
+                <h1>IoT - IB200001</h1>
+            </div>
+            <div id="ispodnavbara">
+                <h2 id="svjetloS">Svjetla</h2>
+                <button id="svjetlo" onclick="Svjetlo()">Upali svjetlo</button>
+            </div>
+        </div>
+        <div id="donji">
+            <div id="donjiDesni">
+                <h1 id="svjetloS">Prozor</h1>
+                <input type="range" id="prozor" min="0" max="180"></input>
+                <button id="prozorZakljucaj" onclick="Zakljucaj()">Zakljucaj</button>
+            </div>
+            <div id="donjiLijevi">
+                <button>Nismo kod kuće</button>
+                <h1 id="pokret"></h1>
+            </div>
+        </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
