@@ -12,7 +12,19 @@ firebase.initializeApp(firebaseConfig);
 firebase.analytics();  
 var firebaseRef=firebase.database().ref("svjetlo");
 var firebaseRef1=firebase.database().ref("prozor");
+var firebaseRef2=firebase.database().ref("pozar");
 
+const database1 = firebase.database();
+setInterval(function() {
+    const ref = database1.ref("pozar");
+    ref.once("value", function(snapshot) {
+      console.log(snapshot.val());
+      if(snapshot.val()==true){
+        alert("Požar detektovan");
+        firebaseRef2.set(false);
+      }
+    });
+  }, 2000);
 function Svjetlo() {
     var dugme = document.getElementById("svjetlo");
     if (dugme.innerText === "Ugasi svjetlo") {
