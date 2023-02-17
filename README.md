@@ -1,10 +1,9 @@
 # IoTProject
 Design and development of IoT projects - my project // FIT@UNMO
 
-A project made for a college course. The goal of the course was to familiarize students with basic concepts in the field of IoT projects. The goal of this project is to create some semblance of a "smart house" or rather a connected house with the help of readily available sensors.
-With the help of sensors and the executive side, the following functionalities were achieved: turning on and off the light, detecting movement if the house is empty, detecting fire, locking and opening windows from 0 to 180 degrees.
-Initially, the project was supposed to have a much larger scope, however, due to the lack of voltage (the node works on 3V), the maximum was extracted from its voltage.
-This project is highly upgradeable due to its simple design. In addition, due to other faculty obligations, the control side was made as a small web application, and the goal would be to make a mobile application, which would make more sense for this purpose (or at least a responsive web application).
+This project was developed as part of a college course aimed at providing students with an understanding of fundamental concepts in IoT projects. The primary objective of the project was to establish a "smart house" or connected house utilizing easily accessible sensors. Through the integration of sensors and the executive side, a range of functionalities were achieved, including the ability to turn on and off lights, detect movement in the absence of occupants, identify fire hazards, and lock or open windows to any degree between 0 and 180.
+
+Although the project's original scope was extensive, its maximum potential was reached due to the node's operational limitations, which function on 3V voltage. Nevertheless, the project's design is straightforward, enabling it to be easily upgraded. Additionally, due to other faculty commitments, a small web application was created for the control side. The aim would be to develop a mobile application that would be more suited to this purpose or, at the very least, a responsive web application.
 
 Summary of the project:
 
