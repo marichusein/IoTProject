@@ -1,12 +1,12 @@
 const firebaseConfig = {
-    apiKey: "AIzaSyCL1YiihosH7HdGBgiA7suzHaK5IATjvYA",
-    authDomain: "iot-connectedhouse-ib200001.firebaseapp.com",
-    databaseURL: "https://iot-connectedhouse-ib200001-default-rtdb.firebaseio.com",
-    projectId: "iot-connectedhouse-ib200001",
-    storageBucket: "iot-connectedhouse-ib200001.appspot.com",
-    messagingSenderId: "794512223865",
-    appId: "1:794512223865:web:716d4c79f2675cba65eea8",
-    measurementId: "G-YYFMEPKELX"
+    apiKey: "YOUR_API_KEY",
+    authDomain: "YOUR_AUTH_DOMAIN",
+    databaseURL: "YOUR_DATABASE_URL",
+    projectId: "YOUR_PROJECT_ID",
+    storageBucket: "YOUR_STORAGE_BUCKET",
+    messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+    appId: "YOUR_APP_ID",
+    measurementId: "YOUR_MEASUREMENT_ID"
 };
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
@@ -15,6 +15,7 @@ var firebaseRef1 = firebase.database().ref("prozor");
 var firebaseRef2 = firebase.database().ref("pozar");
 var kodKuceAktivno = firebase.database().ref("aktivno");
 var detektovan = firebase.database().ref("detektovano");
+var rampica = firebase.database().ref("rampa");
 
 
 
@@ -25,8 +26,6 @@ setInterval(function () {
         console.log(snapshot.val());
         if (snapshot.val() == true) {
             alert("Požar detektovan");
-            var pozarF = document.getElementById("pokret");
-            pozarF.innerText = "Goriii";
             firebaseRef2.set(false);
         }
     });
@@ -63,9 +62,11 @@ var zakljucano = true;
 var slider = document.getElementById("prozor");
 slider.disabled = true;
 slider.value = 0;
+var prozor = document.getElementById("prozor");
+
+var dugme = document.getElementById("prozorZakljucaj");
 function Zakljucaj() {
-    var prozor = document.getElementById("prozor");
-    var dugme = document.getElementById("prozorZakljucaj");
+
     if (zakljucano == true) {
 
         slider.disabled = true;
@@ -77,11 +78,18 @@ function Zakljucaj() {
 
 
     }
-    if (prozor.value == 0) {
-        zakljucano = !zakljucano;
+    if (zakljucano == false) {
+        if (prozor.value > 0) {
+
+            alert("Zatvorite prozor kako biste ga zaključali");
+        }
+        else {
+            zakljucano = true;
+        }
     }
     else {
-        alert("Prvo zatvorite prozor");
+
+        zakljucano = false;
     }
 }
 function NagibProzora() {
@@ -89,6 +97,9 @@ function NagibProzora() {
 
     firebaseRef1.set(parseInt(slider.value));
 
+}
+function Rampa(){
+    rampica.set(1);
 }
 function KodKuce() {
     kodKuceAktivno.set(false);

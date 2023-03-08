@@ -13,14 +13,14 @@ int dioda = D1;
 const int senzorPozara = A0;
 #define senzorPokreta D0
 
-#define FIREBASE_HOST "iot-connectedhouse-ib200001-default-rtdb.firebaseio.com"
-#define FIREBASE_AUTH "XcETyyWkegVXpk5E31B1ZzK0LBB7Cy95OUK2aEBh"
-#define WIFI_SSID "Redmi Note 9 Pro"
-#define WIFI_PASSWORD "husohuso12"
+#define FIREBASE_HOST "example-default-rtdb.firebaseio.com"
+#define FIREBASE_AUTH "auth"
+#define WIFI_SSID "WiFi - Name"
+#define WIFI_PASSWORD "WiFi - Pass"
 void setup() {
   pinMode(dioda, OUTPUT);
   pinMode(senzorPokreta, INPUT);
-  prozor.attach(D3);
+  prozor.attach(D4);
   // Debug console
   Serial.begin(9600);
   WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
@@ -42,8 +42,14 @@ void setup() {
 }
 void loop() {
   bool kodKuce = Firebase.getBool("aktivno");
+  int rampica=Firebase.getInt("rampa");
   Serial.println("Kod kuce: ");
   Serial.println(kodKuce);
+  if(rampica==1){
+    prozor.write(90);
+    delay(1000);
+    Firebase.setInt("rampa", 0);
+  }
   if (kodKuce == 1) {
     int motionDetected = digitalRead(senzorPokreta);
     if (motionDetected == 0) {

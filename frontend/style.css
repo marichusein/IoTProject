@@ -1,14 +1,18 @@
-*{
+* {
     font-family: 'Courier New', Courier, monospace;
     box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
-html, body, #sve{
+
+html,
+body,
+#sve {
     width: 100%;
     height: 100%;
 }
-#sve{
+
+#sve {
     display: flex;
     flex-direction: column;
     background-image: url(./preview.jpg);
@@ -16,25 +20,31 @@ html, body, #sve{
     background-color: rgba(0, 0, 0, 0.245);
     background-size: cover;
 }
-#gornji, #donji{
+
+#gornji,
+#donji {
     width: 100%;
     height: 50%;
     display: flex;
 }
-#gornji{
+
+#gornji {
     flex-direction: column;
 }
-#donji{
+
+#donji {
     flex-direction: row;
 }
-#navbar{
+
+#navbar {
     width: 100%;
     height: 20%;
     display: flex;
     justify-content: center;
     background-color: rgba(0, 255, 255, 0.188);
 }
-#ispodnavbara{
+
+#ispodnavbara {
     width: 100%;
     height: 80%;
     display: flex;
@@ -42,12 +52,14 @@ html, body, #sve{
     justify-content: center;
     background-color: rgba(255, 255, 0, 0.255);
 }
-#svjetloS{
+
+#svjetloS {
     margin-left: auto;
     margin-right: auto;
     font-size: xx-large;
 }
-#svjetlo{
+
+#svjetlo {
     margin-left: 33%;
     margin-right: 33%;
     width: 33%;
@@ -55,7 +67,8 @@ html, body, #sve{
     font-size: x-large;
     font-weight: bold;
 }
-#donjiDesni{
+
+#donjiDesni {
     width: 50%;
     height: 100%;
     display: flex;
@@ -63,16 +76,19 @@ html, body, #sve{
     justify-content: center;
     background-color: rgba(95, 158, 160, 0.256);
 }
-#prozor{
+
+#prozor {
     margin-left: 20%;
     margin-right: 20%;
 }
-#prozorZakljucaj{
+
+#prozorZakljucaj {
     margin-left: 35%;
     margin-right: 35%;
     height: 15%;
 }
-#donjiLijevi{
+
+#donjiLijevi {
     width: 50%;
     height: 100%;
     display: flex;
@@ -81,8 +97,31 @@ html, body, #sve{
     background-color: rgba(0, 100, 0, 0.288);
 
 }
-#dugmeSenzor{
+
+#dugmeSenzor {
     height: 15%;
     margin-left: 35%;
     margin-right: 35%;
+}
+
+@media only screen and (max-width: 800px) {
+    #donji {
+        flex-direction: column;
+    }
+
+    #donjiLijevi {
+        width: 100%;
+
+    }
+    #prozorZakljucaj{
+        height: 55px;
+    }
+
+    #donjiDesni {
+        width: 100%;
+    }
+    #dugmeSenzor{
+        height: 55px;
+    }
+
 }
