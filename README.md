@@ -5,13 +5,13 @@ This project was developed as part of a college course aimed at providing studen
 
 Although the project's original scope was extensive, its maximum potential was reached due to the node's operational limitations, which function on 3V voltage. Nevertheless, the project's design is straightforward, enabling it to be easily upgraded. Additionally, due to other faculty commitments, a small web application was created for the control side. The aim would be to develop a mobile application that would be more suited to this purpose or, at the very least, a responsive web application.
 
-Summary of the project:
+## Summary of the project:
 
-•	Equipment: NodeMCU ESP8266, LED Diode, IR flame sensor, IR motion sensor, Servo Motor
+- 	Equipment: NodeMCU ESP8266, LED Diode, IR flame sensor, IR motion sensor, Servo Motor
 
-•	Control side: HTML, CSS, JavaScript
+- 	Control side: HTML, CSS, JavaScript
 
-•	Executive side: C/C++ in ArduinoIDE with ESP Library (v 2.7.4.)
+- 	Executive side: C/C++ in ArduinoIDE with ESP Library (v 2.7.4.)
 
-•	All connected to Firebase
+-	All connected to Firebase
 
